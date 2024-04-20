@@ -1,0 +1,164 @@
+html, body{
+    height:100%;
+    width:100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #efeae3; */
+}
+
+/* Background Page */
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #efeae3;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* NavBar */
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 1.5%;
+    }
+
+        /* Right side of Navbar */
+        .nav-r{
+        display: flex;
+        gap: 15px;
+        }
+
+            /* Inside entities of the right side of the navbar*/
+            .nav-r h4{
+            padding: 10px 20px;
+            border: 2px solid rgb(157, 152, 152);
+            border-radius: 20px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.342);
+            position: relative;
+            overflow: hidden; /* Transition effect */
+            }
+
+            .nav-r h4::after{
+                content: "";
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                position: absolute;
+                left: 0%;
+                bottom: -100%;
+                border-radius: 80%;
+                transition: all ease 0.5s;
+            }
+
+            .nav-r h4:hover::after{  
+                /* POTENTIAL MISTAKE: .nav-r h4: hover::after */
+                bottom: 0%;
+                border-radius: 0;
+                transition: all ease 0.5s;
+            }
+
+            .nav-r a{
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.342);
+                z-index: 9;
+                position: relative;
+            }
+
+            .nav-r h4:hover a{
+                color: white;
+            }
+
+    /* Center of the Page */
+    .center{
+        height: 500px;
+        /* background-color: brown; */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .left h3{
+        line-height: 2vw;
+        font-size: 2vw;
+    }
+
+    .right p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        line-height: 8vw;
+        font-size: 10vw;
+        margin-right: 1.5vw;
+        margin-bottom: 1.5vw;
+        text-align: right;
+    }
+
+    /* Video Div */
+    .page1 video{
+        width: 95%;
+        margin: 3vw auto; /*Basic SYNTAX FOR MARGIN IN CSS=> margin: 3vw auto 3vw auto;  [Top, Right, Bottom, Left]*/
+        border-radius: 20px;
+        display: block;
+        position: relative;
+    }
+
+    /* ANIMATION CIRCLES */
+     .animationbox1{
+        height: 30vw;
+        width: 25vw;
+        background-color: orangered;
+        border-top-left-radius: 100vw;
+        border-bottom-left-radius: 100vw;
+        position: absolute;
+        right: 0;
+        bottom:35vw;
+        filter: blur(15px);
+        animation-name: anime1;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    .animationbox2{
+        height: 30vw;
+        width: 25vw;
+        background-color: orangered;
+        border-top-left-radius: 100vw;
+        border-bottom-left-radius: 100vw;
+        position: absolute;
+        right: 10%;
+        bottom:32vw;
+        filter: blur(20px);
+        animation-name: anime2;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+        @keyframes anime1 {
+            from{
+                transform: translate(10%, 10%);
+            }
+            to{
+                transform: translate(0%, 0%);
+            }
+        }
+        @keyframes anime2 {
+            from{
+                transform: translate(0%, 0%);
+            }
+            to{
+                transform: translate(20%, 10%);
+            }
+        }
+
